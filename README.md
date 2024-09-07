@@ -1,2 +1,2 @@
-# jenki
+# jenkins
 This is Jekins Project
