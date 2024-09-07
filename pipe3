@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                // Clone the repository from GitHub
+                git branch: 'main', url: 'https://github.com/maruthi1828/jenkins.git'
+            }
+        }
+        
+        stage('Execute Script') {
+            steps {
+                // Execute a script from the cloned repository
+                sh 'chmod +x test.sh'  // Make sure the script is executable
+                sh './test.sh'         // Run the script
+            }
+        }
+    }
+}
